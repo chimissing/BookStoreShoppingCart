@@ -1,0 +1,71 @@
+﻿@model BookStoreShoppingCart.ViewModels.ProductFormViewModel
+@{
+    ViewBag.Title = "ProductForm";
+}
+
+<style>
+    .ProductImg {
+        width: 50px;
+    }
+</style>
+
+<h2>@Model.Title</h2>
+@Html.ValidationSummary()
+
+@using (@Html.BeginForm("Save", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.Name)
+        @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.GenreId)
+        @Html.DropDownListFor(c => c.GenreId, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.GenreId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.PublisherId)
+        @Html.DropDownListFor(c => c.PublisherId, new SelectList(Model.Publishers, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.PublisherId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.PublishDate)
+        @Html.TextBoxFor(c => c.PublishDate, "{0:yyyy/MM/dd}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.PublishDate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Price)
+        @Html.TextBoxFor(c => c.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Price)
+    </div>
+    <div class="form-group">
+        <div>
+            @if (Model.Title == "編輯商品")
+            {
+                <img class="ProductImg" src="@Model.ImageUrl" alt="商品圖片">                
+            }
+
+        </div>
+        @Html.LabelFor(c => c.ImageUrl)
+        @Html.TextBox("file", "", new { type = "file", id = "file" })
+
+
+    </div>
+    @*<div class="form-group">
+            @Html.LabelFor(c => c.Description)
+            @Html.TextBoxFor(c => c.Description, new { @class = "form-control" })
+
+        </div>*@
+
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.AntiForgeryToken();
+    <button type="submit" class="btn btn-primary">儲存</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

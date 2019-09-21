@@ -1,0 +1,18 @@
+﻿@model IEnumerable<BookStoreShoppingCart.Models.Genre>
+
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            書籍分類
+        </li>
+        @foreach (var genre in Model)
+        {
+            <li>
+                <a href="/Store/@genre.Name">@genre.Name</a>
+            </li>
+        }
+
+
+    </ul>
+</div>

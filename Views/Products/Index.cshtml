@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BookStoreShoppingCart.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .iconlink {
+        color: black;
+    }
+</style>
+
+
+<h2>商品列表</h2>
+<p>
+    @Html.ActionLink("新增商品", "New", "Products", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>書名</th>
+            <th>種類</th>
+            <th>出版商</th>
+            <th>出版日期</th>
+            <th>單價</th>
+            <th>詳細資料 | 刪除</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                @*<td>@Html.ActionLink(product.Name, "Edit", "Products", new { id = product.Id }, null)</td>*@
+                <td>@product.Name</td>
+                <td>@product.Genre.Name</td>
+                <td>@product.Publisher.Name</td>
+                <td>@product.PublishDate.ToShortDateString()</td>
+                <td>$@product.Price</td>
+                @*<td>@Html.ActionLink("查看", "Details", "Products", new { id = product.Id }, new { @class = "btn btn-primary" })</td>*@
+                @*<td>@Html.ActionLink("刪除", "Delete", "Products", new { id = product.Id }, new { @class = "btn btn-primary" })</td>*@
+                <td>
+                    <div class="col-xs-7">
+                        <a class="iconlink" href="@Url.Action("Details", "Products",new {id = product.Id })">
+                            <i class="fas fa-info-circle"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-xs-5">
+                        <a class="iconlink" href="@Url.Action("Delete", "Products",new { id = product.Id })" onclick="return confirm('確定要刪除嗎?')">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </div>
+
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+

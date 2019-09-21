@@ -1,0 +1,5 @@
+﻿@{
+    var currentCart = BookStoreShoppingCart.Models.Operation.GetCurrentCart();
+}
+
+<a href="@Url.Action("Index","Order",new { })"><i class="fas fa-shopping-cart"></i> @String.Format("購物車({0})", currentCart.Count)</a>

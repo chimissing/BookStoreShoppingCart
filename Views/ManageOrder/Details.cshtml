@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BookStoreShoppingCart.Models.OrderDetail>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>@String.Format("訂單編號{0}", Model.First().Id)</h3>
+
+<table class="table">
+    <tr>
+        <th>商品名稱</th>
+        <th>商品價格</th>
+        <th>購買數量</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modeltem => item.ProductName)</td>
+            <td>$@Html.DisplayFor(modeltem => item.Price)</td>
+            <td>@Html.DisplayFor(modeltem => item.Quantity)</td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("回訂單列表", "Index", new { }, new { @class = "btn btn-default" })
+

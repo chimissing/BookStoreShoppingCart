@@ -1,0 +1,63 @@
+﻿@model BookStoreShoppingCart.Models.Product
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>@Model.Name</h3>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Publisher.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publisher.Name)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            $@Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+
+        </dd>
+
+
+        <dd><img src="@Model.ImageUrl" class="img-responsive" alt="" /></dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("編輯", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("回商品管理", "Index")
+</p>
+

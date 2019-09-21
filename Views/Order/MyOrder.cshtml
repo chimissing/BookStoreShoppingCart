@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BookStoreShoppingCart.Models.Order>
+
+@{
+    ViewBag.Title = "MyOrder";
+}
+
+<h2>我的訂單</h2>
+<br />
+@foreach (var order in Model)
+{
+    <caption>訂單編號:@order.Id &emsp;&emsp;<span>訂購日期:@order.OrderDate.ToShortDateString()</span></caption>
+    <table class="table">
+
+        <tr>
+            <th class="col-xs-9">商品</th>
+            <th class="col-xs-1">單價</th>
+            <th class="col-xs-1">數量</th>
+            <th class="col-xs-1">小計</th>
+        </tr>
+
+        @foreach (var orderDetail in order)
+        {
+            <tr>
+                <td>@orderDetail.ProductName</td>
+                <td>$@orderDetail.Price</td>
+                <td>@orderDetail.Quantity</td>
+                <td>$@orderDetail.Amount</td>
+            </tr>
+        }
+        <tr><td colspan="2"></td><td class="totalAmount">總金額</td><td>$@order.TotalAmount</td></tr>
+
+    </table>
+    <br />
+}
+

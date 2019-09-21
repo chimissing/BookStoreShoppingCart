@@ -37,35 +37,35 @@ namespace BookStoreShoppingCart.Models
         }
 
         //新增一筆Product，使用ProductId
-        //public bool AddProduct(int ProductId)
-        //{
-        //    var findItem = cartItems
-        //                    .Where(s => s.Id == ProductId)
-        //                    .Select(s => s)
-        //                    .FirstOrDefault();
+        public bool AddProduct(int ProductId)
+        {
+            var findItem = cartItems
+                            .Where(s => s.Id == ProductId)
+                            .Select(s => s)
+                            .FirstOrDefault();
 
-        //    //判斷相同Id的CartItem是否已經存在購物車內
-        //    if (findItem == default(CartItem))
-        //    {   //不存在購物車內，則新增一筆
-        //        using (ApplicationDbContext db = new ApplicationDbContext())
-        //        {
-        //            //var product = (from s in db.Products
-        //            //               where s.Id == ProductId
-        //            //               select s).FirstOrDefault();
-        //            var product = db.Products.FirstOrDefault(p => p.Id == ProductId);
+            //判斷相同Id的CartItem是否已經存在購物車內
+            if (findItem == default(CartItem))
+            {   //不存在購物車內，則新增一筆
+                using (ApplicationDbContext db = new ApplicationDbContext())
+                {
+                    //var product = (from s in db.Products
+                    //               where s.Id == ProductId
+                    //               select s).FirstOrDefault();
+                    var product = db.Products.FirstOrDefault(p => p.Id == ProductId);
 
-        //            if (product != default(Product))
-        //            {
-        //                AddProduct(product);
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {   //存在購物車內，則將商品數量累加
-        //        findItem.Quantity += 1;
-        //    }
-        //    return true;
-        //}
+                    if (product != default(Product))
+                    {
+                        AddProduct(product);
+                    }
+                }
+            }
+            else
+            {   //存在購物車內，則將商品數量累加
+                findItem.Quantity += 1;
+            }
+            return true;
+        }
 
         //新增一筆Product，使用Product物件
         private bool AddProduct(Product product)
@@ -125,7 +125,8 @@ namespace BookStoreShoppingCart.Models
                     Price = cartItem.Price,
                     Quantity = cartItem.Quantity,
                     OrderId = orderId,
-                    UserId = userId
+                    UserId = userId,
+                    ProductId=cartItem.Id
                 });
             }
             return result;

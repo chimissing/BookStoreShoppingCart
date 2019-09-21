@@ -1,0 +1,82 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<BookStoreShoppingCart.Models.Product>
+@{
+    ViewBag.Title = "Browse";
+}
+
+<style>
+    .ProductImg {
+        /*height:100px;
+        width:30%;*/
+        display: block;
+        max-width: 100%;
+        max-height: 200px;
+        width: auto;
+        height: auto
+    }
+
+    .singleBook {
+        width: 150px;
+        height: 140px;
+        line-height: 1.4em;
+    }
+
+    #mainpage {
+        margin-top: 30px;
+    }
+
+    #paging {
+        margin-top: 50px;
+    }
+</style>
+
+
+
+<div class="row">
+    <div class="col-xs-12"><h2 class="text-center">@Model.First().Genre.Name</h2> </div>
+    <br />
+
+
+
+</div>
+
+<div class="row" id="mainpage">
+
+    @foreach (var product in Model)
+    {
+        <div class="col-sm-6 col-md-3">
+            @*<div class="container">*@
+            <img class="ProductImg" src="@product.ImageUrl" alt="商品圖片">
+            <div class="singleBook">
+                <p>售價 :$ @product.Price</p>
+
+                <p>
+                    <a onclick="AddToCart('@product.Id')" href="javascript:void(0);"
+                       class="btn btn-primary" role="button">
+                        加入購物車
+                    </a>
+
+                </p>
+
+                <p>@Html.ActionLink(product.Name, "Details", "Products", new { id = product.Id }, null)</p>
+
+
+
+            </div>
+        </div>
+
+        @*</div>*@
+    }
+
+
+
+    <div class="col-xs-12" id="paging">
+        <hr />
+        @Html.PagedListPager(Model, page => Url.Action("Browse", new { page }),
+     PagedListRenderOptions.Classic)
+
+    </div>
+
+</div>
+
