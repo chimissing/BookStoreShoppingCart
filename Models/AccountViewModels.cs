@@ -63,7 +63,7 @@ namespace BookStoreShoppingCart.Models
     }
 
     public class RegisterViewModel
-    {
+    {        
         [Required]
         [EmailAddress]
         [Display(Name = "電子郵件")]

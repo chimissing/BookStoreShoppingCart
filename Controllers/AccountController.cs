@@ -10,6 +10,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using BookStoreShoppingCart.Models;
 
+using Microsoft.AspNet.Identity.EntityFramework;
+
 namespace BookStoreShoppingCart.Controllers
 {
     [Authorize]
@@ -154,7 +156,9 @@ namespace BookStoreShoppingCart.Controllers
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
-                {
+                {                 
+
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // 如需如何進行帳戶確認及密碼重設的詳細資訊，請前往 https://go.microsoft.com/fwlink/?LinkID=320771

@@ -14,19 +14,20 @@ namespace BookStoreShoppingCart.Controllers
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        
+
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var products = db.Products.Include(p => p.Publisher).Include(p => p.Genre).ToList();
             return View(products);
         }
-
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
             var product = db.Products.Include(p => p.Publisher).Include(p => p.Genre).SingleOrDefault(p => p.Id == id);
             return View(product);
         }
-
+        [Authorize(Roles = "Admin")]
         public ActionResult New()
         {
             var viewModel = new ProductFormViewModel
@@ -37,7 +38,7 @@ namespace BookStoreShoppingCart.Controllers
             };
             return View("ProductForm", viewModel);
         }
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
             var product = db.Products.SingleOrDefault(p => p.Id == id);

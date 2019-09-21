@@ -42,22 +42,29 @@
         <dd>
             $@Html.DisplayFor(model => model.Price)
         </dd>
+        @if (User.IsInRole("Admin"))
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ImageUrl)
 
-        <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
+            </dd>
+        }
 
-        </dd>
 
 
         <dd><img src="@Model.ImageUrl" class="img-responsive" alt="" /></dd>
     </dl>
 </div>
-<p>
-    @Html.ActionLink("編輯", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("回商品管理", "Index")
-</p>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("編輯", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("回商品管理", "Index")
+    </p>
+}
+
 

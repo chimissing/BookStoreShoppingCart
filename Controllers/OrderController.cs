@@ -8,7 +8,7 @@ using BookStoreShoppingCart.Models;
 using Microsoft.AspNet.Identity;
 
 namespace BookStoreShoppingCart.Controllers
-{
+{    
     public class OrderController : Controller
     {      
         public ActionResult Index()

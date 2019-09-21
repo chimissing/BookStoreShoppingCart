@@ -9,6 +9,7 @@ using PagedList;
 
 namespace BookStoreShoppingCart.Controllers
 {
+    [AllowAnonymous]
     public class StoreController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
