@@ -15,12 +15,10 @@ namespace BookStoreShoppingCart.Models
         [StringLength(255)]
         public string Name { get; set; }
 
-        public Genre Genre { get; set; }
-        [Display(Name = "類別")]
+        public Genre Genre { get; set; }        
         public int GenreId { get; set; }
 
-        public Publisher Publisher { get; set; }
-        [Display(Name = "出版商")]
+        public Publisher Publisher { get; set; }        
         public int PublisherId { get; set; }
 
 
@@ -31,6 +29,7 @@ namespace BookStoreShoppingCart.Models
         public decimal Price { get; set; }
 
         [StringLength(1023)]
+        [Display(Name = "圖片位址")]
         public string ImageUrl { get; set; }
 
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

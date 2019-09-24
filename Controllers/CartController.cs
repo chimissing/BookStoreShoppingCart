@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace BookStoreShoppingCart.Controllers
 {
+    [AllowAnonymous]
     public class CartController : Controller
     {
         public ActionResult Index()
@@ -30,7 +31,7 @@ namespace BookStoreShoppingCart.Controllers
         {
             var currentCart = Models.Operation.GetCurrentCart();
             currentCart.RemoveProduct(id);
-            //return View("Index", "Order");
+            
             return PartialView("_CartPartial");
         }
 

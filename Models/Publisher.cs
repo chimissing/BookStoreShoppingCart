@@ -12,6 +12,7 @@ namespace BookStoreShoppingCart.Models
 
         [Required]
         [StringLength(255)]
+        [Display(Name = "出版商")]
         public string Name { get; set; }
     }
 }

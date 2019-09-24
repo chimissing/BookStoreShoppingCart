@@ -11,6 +11,8 @@
 <table class="table">
     <tr>
         <th>購買會員</th>
+        <th>訂單編號</th>
+        <th>訂購日期</th>
         <th>收貨人姓名</th>
         <th>收貨人電話</th>
         <th>收貨人住址</th>
@@ -19,21 +21,14 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>@item.GetUserName()</td>
+            <td>@item.Id</td>
+            <td>@item.OrderDate.ToShortDateString()</td>                  
+            <td>@item.ReceiverName</td>
+            <td>@item.ReceiverPhone</td>
+            <td>@item.ReceiverAddress</td>
             <td>
-                @item.GetUserName()
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReceiverName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReceiverPhone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReceiverAddress)
-            </td>
-            <td>
-                @Html.ActionLink("訂單明細", "Details", new { id = item.Id }
-             , new { @class = "btn btn-default" })
+                @Html.ActionLink("訂單明細", "Details", new { id = item.Id }, new { @class = "btn btn-default" })
             </td>
         </tr>
     }

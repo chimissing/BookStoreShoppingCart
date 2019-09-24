@@ -8,36 +8,11 @@
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     <link href="@Url.Content("~/Content/sidebar.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/custom.css")" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <style>
-        .navbar-inverse {
-            background-color: black;
-        }
-
-        .navbar {
-            min-height: 60px;
-            font-size: 16px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        }
-
-        .nav > li > a {
-            padding-top: 20px;
-        }
-
-        .navbar-brand {
-            padding-top: 20px;
-            font-size: 30px;
-            font-weight: 700;
-            margin-right: 30px;
-        }
-
-        .totalAmount {
-            font-weight: bold;
-        }
-    </style>
-
-
 
 </head>
 <body>
@@ -54,8 +29,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*<li>@Html.ActionLink("首頁", "Index", "Home")</li>
-        <li>@Html.ActionLink("關於", "About", "Home")</li>
-        <li>@Html.ActionLink("連絡人", "Contact", "Home")</li>*@
+                      <li>@Html.ActionLink("關於", "About", "Home")</li>
+                      <li>@Html.ActionLink("連絡人", "Contact", "Home")</li>*@
                     @if (User.IsInRole("Admin"))
                     {
                         <li>@Html.ActionLink("商品管理", "Index", "Products")</li>
@@ -79,8 +54,7 @@
         </div>
     </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
+        
         @RenderSection("scripts", required: false)
 
 

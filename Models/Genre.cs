@@ -12,6 +12,7 @@ namespace BookStoreShoppingCart.Models
 
         [Required]
         [StringLength(255)]
+        [Display(Name = "類別")]
         public string Name { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }

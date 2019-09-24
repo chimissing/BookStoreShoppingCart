@@ -1,0 +1,66 @@
+﻿body {
+    font-size: 16px;
+}
+
+table {
+    font-size: 14px;
+}
+
+@media(min-width: 1280px) {
+    .container {
+        width: 1260px;
+    }
+}
+
+.navbar-inverse {
+    background-color: black;
+}
+
+.navbar {
+    min-height: 60px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.nav > li > a {
+    padding-top: 20px;
+}
+
+.navbar-brand {
+    padding-top: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    margin-right: 30px;
+}
+
+.totalAmount {
+    font-weight: bold;
+}
+
+.ProductImg {
+    display: block;
+    max-width: 100%;
+    max-height: 200px;
+    margin: 0 auto;
+}
+
+.singleBook {
+    width: 200px;
+    height: 350px;
+    line-height: 1.4em;
+    padding-left: 50px;
+    overflow: hidden;
+}
+
+.mainpage {
+    margin-top: 30px;
+}
+
+.pricing {
+    margin: 5px 0;
+}
+
+.productTitle {
+    margin: 5px 0;
+    height: 70px;
+    overflow: hidden;
+}

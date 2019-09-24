@@ -10,12 +10,14 @@ using Microsoft.AspNet.Identity;
 namespace BookStoreShoppingCart.Controllers
 {    
     public class OrderController : Controller
-    {      
+    {
+        [AllowAnonymous]  
         public ActionResult Index()
         {
             return View();
         }
 
+        
         [HttpPost]
         public ActionResult Index(Ship postback)
         {
@@ -49,6 +51,7 @@ namespace BookStoreShoppingCart.Controllers
                     db.OrderDetails.AddRange(orderDetails);
                     db.SaveChanges();
                     currentcart.ClearCart();
+                    
                 }
                 return RedirectToAction("MyOrder","Order");
 

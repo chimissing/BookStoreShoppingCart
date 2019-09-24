@@ -49,27 +49,23 @@
                 <th>@Html.DisplayNameFor(model => model.Publisher.Name)</th>
                 <td>@Html.DisplayFor(model => model.Publisher.Name)</td>
             </tr>
-
             <tr>
                 <th>@Html.DisplayNameFor(model => model.Price)</th>
                 <td>$@Html.DisplayFor(model => model.Price)</td>
             </tr>
-
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ImageUrl)</th>
+                <td>@Html.DisplayFor(model => model.ImageUrl)</td>
+            </tr>
         </table>
-        <p>
-            <a onclick="AddToCart('@Model.Id')" href="javascript:void(0);"
-               class="btn btn-primary" role="button">
-                加入購物車
-            </a>
-        </p>
 
     </div>
 </div>
 
-
-
-
-
-
+<p>
+    @Html.ActionLink("編輯", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("回商品管理", "Index") |
+    @Html.ActionLink("回首頁","Index","Home")
+</p>
 
 

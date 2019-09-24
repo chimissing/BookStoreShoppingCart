@@ -25,8 +25,13 @@ namespace BookStoreShoppingCart.Controllers
         public ActionResult Details(int id)
         {
             var product = db.Products.Include(p => p.Publisher).Include(p => p.Genre).SingleOrDefault(p => p.Id == id);
+            if (User.IsInRole("Admin"))
+            {
+                return View("AdminDetails",product);
+            }
             return View(product);
         }
+
         [Authorize(Roles = "Admin")]
         public ActionResult New()
         {
@@ -38,6 +43,7 @@ namespace BookStoreShoppingCart.Controllers
             };
             return View("ProductForm", viewModel);
         }
+
         [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
