@@ -29,12 +29,12 @@ else
             {
                 <tr>
                     <td>@orderDetail.ProductName</td>
-                    <td>$@orderDetail.Price</td>
+                    <td>$@orderDetail.Price.ToString("G29")</td>
                     <td>@orderDetail.Quantity</td>
-                    <td>$@orderDetail.Amount</td>
+                    <td>$@orderDetail.Amount.ToString("G29")</td>
                 </tr>
             }
-            <tr><td colspan="2"></td><td class="totalAmount">總金額</td><td>$@order.TotalAmount</td></tr>
+            <tr><td colspan="2"></td><td class="totalAmount">總金額</td><td>$@order.TotalAmount.ToString("G29")</td></tr>
 
         </table>
         

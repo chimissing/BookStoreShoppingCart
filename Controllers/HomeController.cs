@@ -15,17 +15,14 @@ namespace BookStoreShoppingCart.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         public ActionResult Index()
-        {
-            //var products = db.Products.Include(p => p.Publisher).Include(p => p.Genre).ToList();
-            //return View(products);
+        {          
             var topSellingProducts = GetTopSellingProducts(12);
             return View(topSellingProducts);
         }
 
         private List<Product> GetTopSellingProducts(int count)
         {
-            // Group the order details by album and return
-            // the albums with the highest count
+            // Group the order details by product and return the products with the highest count
             return db.Products
                 .OrderByDescending(a => a.OrderDetails.Sum(o => o.Quantity))
                 .Take(count)

@@ -43,13 +43,13 @@ else
                 <tr>
                     <td><img src="@cartItem.ImageURL" width="50" height="50" />@cartItem.ProductName</td>
 
-                    <td>$@cartItem.Price</td>
+                    <td>$@cartItem.Price.ToString("G29")</td>
                     <td>@cartItem.Quantity</td>
-                    <td class="amount">$@cartItem.Amount</td>
+                    <td class="amount">$@cartItem.Amount.ToString("G29")</td>
                     <td><span onclick="RemoveFromCart('@cartItem.Id')"><i class="fas fa-trash-alt iconlink"></i></span></td>
                 </tr>
             }
-            <tr><td colspan="3"></td><td class="totalAmount">總金額</td><td id="totalAmount">$@cart.TotalAmount</td></tr>
+            <tr><td colspan="3"></td><td class="totalAmount">總金額</td><td id="totalAmount">$@cart.TotalAmount.ToString("G29")</td></tr>
         </tbody>
     </table>
 

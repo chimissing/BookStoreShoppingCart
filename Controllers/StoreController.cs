@@ -28,7 +28,7 @@ namespace BookStoreShoppingCart.Controllers
             return View(genreModel.ToList().ToPagedList(page ?? 1, 6));
         }
 
-        //[ChildActionOnly]
+        
         public ActionResult GenreMenu()   // left-side Menu
         {            
             var genres = db.Genres.ToList();

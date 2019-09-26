@@ -64,9 +64,10 @@
         <div class="col-sm-6 col-md-3">
 
             <div class="singleBook">
-                <img class="ProductImg" src="@product.ImageUrl" alt="商品圖片">
-
-                <div class="pricing">售價 :$ @product.Price</div>
+                <a href=@Url.Action("Details", "Products", new { id = product.Id }, null)>
+                    <img class="ProductImg" src="@product.ImageUrl" alt="商品圖片">
+                </a>
+                <div class="pricing">售價 :$ @Html.DisplayFor(m => product.Price)</div>
 
                 <div>
                     <a onclick="AddToCart('@product.Id')" href="javascript:void(0);"

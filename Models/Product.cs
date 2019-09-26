@@ -25,6 +25,7 @@ namespace BookStoreShoppingCart.Models
         [Display(Name = "出版日期")]
         public DateTime PublishDate { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:N0}", ApplyFormatInEditMode = true)]
         [Display(Name = "單價")]
         public decimal Price { get; set; }
 
