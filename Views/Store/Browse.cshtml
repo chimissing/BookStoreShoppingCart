@@ -29,7 +29,7 @@
             <div class="singleBook">
                 <img class="ProductImg" src="@product.ImageUrl" alt="商品圖片">
 
-                <p class="pricing">售價 :$ @product.Price</p>
+                <p class="pricing">售價 :$ @product.Price.ToString("G29")</p>
                 <p>
                     <a onclick="AddToCart('@product.Id')" href="javascript:void(0);"
                        class="btn btn-primary" role="button">
