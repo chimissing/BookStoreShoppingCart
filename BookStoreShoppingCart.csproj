@@ -221,6 +221,22 @@
     <Compile Include="Migrations\201910050815481_PopulatePublisher.Designer.cs">
       <DependentUpon>201910050815481_PopulatePublisher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910180538332_ReversePopulateGenres1.cs" />
+    <Compile Include="Migrations\201910180538332_ReversePopulateGenres1.Designer.cs">
+      <DependentUpon>201910180538332_ReversePopulateGenres1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910180547391_PopulateGenresWithN.cs" />
+    <Compile Include="Migrations\201910180547391_PopulateGenresWithN.Designer.cs">
+      <DependentUpon>201910180547391_PopulateGenresWithN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910180550022_ReversePopulatePublishers.cs" />
+    <Compile Include="Migrations\201910180550022_ReversePopulatePublishers.Designer.cs">
+      <DependentUpon>201910180550022_ReversePopulatePublishers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910180553459_PopulatePublishersWithN.cs" />
+    <Compile Include="Migrations\201910180553459_PopulatePublishersWithN.Designer.cs">
+      <DependentUpon>201910180553459_PopulatePublishersWithN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -255,6 +271,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\BookStoreShoppingCart - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -347,6 +364,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910050815481_PopulatePublisher.resx">
       <DependentUpon>201910050815481_PopulatePublisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910180538332_ReversePopulateGenres1.resx">
+      <DependentUpon>201910180538332_ReversePopulateGenres1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910180547391_PopulateGenresWithN.resx">
+      <DependentUpon>201910180547391_PopulateGenresWithN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910180550022_ReversePopulatePublishers.resx">
+      <DependentUpon>201910180550022_ReversePopulatePublishers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910180553459_PopulatePublishersWithN.resx">
+      <DependentUpon>201910180553459_PopulatePublishersWithN.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
