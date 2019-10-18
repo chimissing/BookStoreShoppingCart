@@ -205,6 +205,22 @@
     <Compile Include="Migrations\201909211415091_SeedUsers.Designer.cs">
       <DependentUpon>201909211415091_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909261055565_PopulateGenre.cs" />
+    <Compile Include="Migrations\201909261055565_PopulateGenre.Designer.cs">
+      <DependentUpon>201909261055565_PopulateGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909261123076_ReversePopulateGenres.cs" />
+    <Compile Include="Migrations\201909261123076_ReversePopulateGenres.Designer.cs">
+      <DependentUpon>201909261123076_ReversePopulateGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909261126313_PopulateGenres.cs" />
+    <Compile Include="Migrations\201909261126313_PopulateGenres.Designer.cs">
+      <DependentUpon>201909261126313_PopulateGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910050815481_PopulatePublisher.cs" />
+    <Compile Include="Migrations\201910050815481_PopulatePublisher.Designer.cs">
+      <DependentUpon>201910050815481_PopulatePublisher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -319,6 +335,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909211415091_SeedUsers.resx">
       <DependentUpon>201909211415091_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909261055565_PopulateGenre.resx">
+      <DependentUpon>201909261055565_PopulateGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909261123076_ReversePopulateGenres.resx">
+      <DependentUpon>201909261123076_ReversePopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909261126313_PopulateGenres.resx">
+      <DependentUpon>201909261126313_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050815481_PopulatePublisher.resx">
+      <DependentUpon>201910050815481_PopulatePublisher.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

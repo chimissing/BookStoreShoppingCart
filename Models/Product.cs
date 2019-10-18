@@ -21,7 +21,7 @@ namespace BookStoreShoppingCart.Models
         public Publisher Publisher { get; set; }        
         public int PublisherId { get; set; }
 
-
+       
         [Display(Name = "出版日期")]
         public DateTime PublishDate { get; set; }
 

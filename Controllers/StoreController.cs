@@ -25,7 +25,7 @@ namespace BookStoreShoppingCart.Controllers
             // Retrieve Genre and its associated products from database
             var genreModel = db.Genres.Include("Products").Single(g => g.Name == genre).Products;
 
-            return View(genreModel.ToList().ToPagedList(page ?? 1, 6));
+            return View(genreModel.ToList().ToPagedList(page ?? 1, 8));
         }
 
         

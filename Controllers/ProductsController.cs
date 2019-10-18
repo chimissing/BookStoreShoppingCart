@@ -91,7 +91,9 @@ namespace BookStoreShoppingCart.Controllers
                 var productInDb = db.Products.Single(p => p.Id == product.Id);
                 productInDb.Name = product.Name;
                 productInDb.Genre = product.Genre;
+                productInDb.GenreId = product.GenreId;
                 productInDb.Publisher = product.Publisher;
+                productInDb.PublisherId = product.PublisherId;
                 productInDb.PublishDate = product.PublishDate;
                 productInDb.Price = product.Price;
 

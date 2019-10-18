@@ -26,6 +26,7 @@ namespace BookStoreShoppingCart.ViewModels
         [Display(Name = "出版商")]
         public int? PublisherId { get; set; }
 
+       
         [Required]
         [Display(Name = "出版日期")]
         public DateTime? PublishDate { get; set; }

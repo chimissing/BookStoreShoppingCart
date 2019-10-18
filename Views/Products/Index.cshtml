@@ -18,12 +18,12 @@
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
-            <th>書名</th>
-            <th>種類</th>
-            <th>出版商</th>
-            <th>出版日期</th>
-            <th>單價</th>
-            <th>詳細資料 | 刪除</th>
+            <th class="col-xs-7">書名</th>
+            <th class="col-xs-1">種類</th>
+            <th class="col-xs-1">出版商</th>
+            <th class="col-xs-1">出版日期</th>
+            <th class="col-xs-1">單價</th>
+            <th class="col-xs-1">查看 | 刪除</th>
 
         </tr>
     </thead>
@@ -31,16 +31,15 @@
         @foreach (var product in Model)
         {
             <tr>
-                @*<td>@Html.ActionLink(product.Name, "Edit", "Products", new { id = product.Id }, null)</td>*@
                 <td>@product.Name</td>
                 <td>@product.Genre.Name</td>
                 <td>@product.Publisher.Name</td>
                 <td>@product.PublishDate.ToShortDateString()</td>
-                <td>$@product.Price</td>
+                <td>$@product.Price.ToString("G29")</td>
                 @*<td>@Html.ActionLink("查看", "Details", "Products", new { id = product.Id }, new { @class = "btn btn-primary" })</td>*@
                 @*<td>@Html.ActionLink("刪除", "Delete", "Products", new { id = product.Id }, new { @class = "btn btn-primary" })</td>*@
                 <td>
-                    <div class="col-xs-7">
+                    <div class="col-xs-6">
                         <a class="iconlink" href="@Url.Action("Details", "Products",new {id = product.Id })">
                             <i class="fas fa-info-circle"></i>
                         </a>
