@@ -28,7 +28,7 @@
 # <a name="english-readme"></a>IT BookStore  
 A practice of a bookstore Shopping Cart  
 Admin account : `Admin@gmail.com/@Aa111`| Guest account : `guest@gmail.com/@Aa222`   
-[visit IT ](https://bookstoreshoppingcart.azurewebsites.net/)(published in Azure)
+[visit IT BookStore](https://bookstoreshoppingcart.azurewebsites.net/)(published in Azure)
 
 #### Main function-Front:
 - Add/Remove a product to/from the shopping cart
